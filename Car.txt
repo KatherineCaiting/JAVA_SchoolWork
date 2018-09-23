@@ -1,0 +1,162 @@
+/**
+* @author 蔡婷
+* @date 2018年9月22日
+* @Title: Car.java
+* @project_name: SchoolWork
+* @Package Ytz
+* @Description: 造汽车
+* @version V1.0
+*/
+
+
+package Ytz;
+
+/**
+* @ClassName: Car
+* @Description: 定义一个汽车类，要求汽车都会有以下基本的属性
+                1。汽车名(型号)
+                2。有一个油箱用来储存汽油；tank
+                3。每种车的油耗也是不同的： oilConsumption
+                                                    汽车也都会有如下的行为
+               1.加油:gas
+               2.能开：run
+                                                    我们希望每辆汽气车出厂时，三个属性都已经有了初始值
+
+* @author 蔡婷
+* @date 2018年9月22日
+*
+*/
+
+
+
+public class Car {
+	
+    /**
+    * @Fields 名字
+    */
+    public String name;
+    
+    /**
+    * @Fields 汽车油量
+    */
+    public int tank;
+    /**
+    * @Fields 汽车每小时的油耗
+    */
+    public int oilConsumption;
+    
+    /**
+    * @Fields 汽车油箱容量
+    */
+    public int fillTank;
+    /**
+    * @Title: gas
+    * @Description: 给汽车加油
+    * @param @param tank    参数
+    * @return void    返回类型
+    * @throws
+    */
+    public void gas(int tank){
+    	
+    	if(tank<fillTank){
+    		tank=fillTank;
+    		System.out.println("您已加满油了！");
+    	}
+    }
+    
+    public void run(int tank,int oilConsumption){
+    	System.out.println("您还可以开"+(tank/oilConsumption)+"个小时！");
+    }
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the tank
+	 */
+	public int getTank() {
+		return tank;
+	}
+
+	/**
+	 * @param tank the tank to set
+	 */
+	public void setTank(int tank) {
+		this.tank = tank;
+	}
+
+	/**
+	 * @return the oilConsumption
+	 */
+	public int getOilConsumption() {
+		return oilConsumption;
+	}
+
+	/**
+	 * @param oilConsumption the oilConsumption to set
+	 */
+	public void setOilConsumption(int oilConsumption) {
+		this.oilConsumption = oilConsumption;
+	}
+
+	/**
+	 * @return the fillTank
+	 */
+	public int getFillTank() {
+		return fillTank;
+	}
+
+	/**
+	 * @param fillTank the fillTank to set
+	 */
+	public void setFillTank(int fillTank) {
+		this.fillTank = fillTank;
+	}
+
+	/**
+	* 创建一个新的实例 Car.
+	*
+	* @param name
+	* @param tank
+	* @param oilConsumption
+	* @param fillTank
+	*/
+	
+	public Car(String name, int tank, int oilConsumption, int fillTank) {
+		super();
+		this.name = name;
+		this.tank = tank;
+		this.oilConsumption = oilConsumption;
+		this.fillTank = fillTank;
+	}
+	
+	
+	/**
+	* 创建一个新的实例 Car.
+	*
+	* @param string
+	*/
+	
+
+	public static void main(String[] args) {
+		Car myCar1 = new Car("沃尔沃",30,6,60);
+		Car myCar2 = new Car("路虎",40,4,66);
+		Car myCar3 = new Car("玛莎拉蒂",50,7,60);
+		Car myCar4 = new Car("劳斯莱斯",30,6,66);
+		myCar1.gas(myCar1.tank);
+		myCar1.run(myCar1.tank, myCar1.oilConsumption);
+    }
+	
+
+}
