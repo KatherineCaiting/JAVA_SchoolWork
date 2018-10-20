@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<member> 
+  <employee idWork="066"> 
+    <name>zha</name>  
+    <birthMonth>7</birthMonth>  
+    <wage>4461.787</wage> 
+  </employee>  
+  <employee idWork="088"> 
+    <name>甜</name>  
+    <birthMonth>4</birthMonth>  
+    <wage>4830.712</wage> 
+  </employee>  
+  <shareHolder idWork="001"> 
+    <name>小莉莉</name>  
+    <wage>5100.0</wage> 
+  </shareHolder>  
+  <employee idWork="055">
+    <name>张三</name>
+    <birthMonth>10</birthMonth>
+    <wage>4923.139</wage>
+  </employee>
+</member>

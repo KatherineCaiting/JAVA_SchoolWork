@@ -1,0 +1,185 @@
+/**
+* @author 蔡婷
+* @date 2018年9月23日
+* @Title: Player.java
+* @project_name: SchoolWork
+* @Package Ytz
+* @Description: 玩家类
+* @version V1.0
+*/
+
+
+package Ytz;
+
+/**
+* @ClassName: Player
+* @Description: 定义Player玩家对象和对应的随机数
+* @author 蔡婷
+* @date 2018年9月23日
+*
+*/
+
+public class Player {
+	public int number;
+
+	
+	public int getNumber() {
+		return number;
+	}
+
+	/**
+	 * @param number the number to set
+	 */
+	public void setNumber(int number) {
+		this.number = number;
+	}
+	
+	public void guess(){
+		number=(int)(Math.random()*10);
+	}
+	
+
+}
+
+/**
+* @author 蔡婷
+* @date 2018年9月22日
+* @Title: GuessGame.java
+* @project_name: SchoolWork
+* @Package Ytz
+* @Description: 猜数字的实现类
+* @version V1.0
+*/
+
+
+package Ytz;
+
+import java.util.Scanner;
+
+/**
+* @ClassName: GuessGame
+* @Description: 初始化玩家对象
+* @author 蔡婷
+* @date 2018年9月22日
+*
+*/
+
+public class GuessGame {
+	//创建三个玩家
+	Player player1=new Player();
+	Player player2=new Player();
+	Player player3=new Player();
+	
+	//猜数字游戏的实现函数
+	public void startGame(){
+		Scanner scanner=new Scanner(System.in);
+		
+		//调用随机生成的随机数
+		player1.guess();
+		player2.guess();
+		player3.guess();
+		
+		//存放玩家输入猜想的数字的数组
+		int []num=new int[4];
+		//存放玩家得分的数组
+		int []score=new int[4];
+		
+
+		for(int i=1;i<=3;i++){
+			score[i]=0;
+			System.out.print("请"+i+"号玩家输入自己猜想的数字（0~9）：");
+			num[i]=scanner.nextInt();
+			if(num[i]==player1.number){
+				score[1]++;
+			}else if(num[i]==player2.number){
+				score[2]++;
+			}else if(num[i]==player3.number){
+				score[3]++;
+			}
+		}
+		
+		//比较三位玩家的得分，输出最高分者
+			if(score[1]==0&&score[2]==0&&score[3]==0){
+				System.out.println("太遗憾，三位亲都没有猜中哦");
+			}else{
+				if(score[1]>score[2]){
+					if(score[1]>score[3]){
+						System.out.println("玩家1赢，最高结果为："+score[1]+"分");
+					}else{
+						System.out.println("玩家3赢，最高结果为："+score[3]+"分");
+					}
+				}else if(score[1]<score[2]){
+					if(score[2]>score[3]){
+						System.out.println("玩家2赢，最高结果为："+score[2]+"分");
+					}else{
+						System.out.println("玩家3赢，最高结果为："+score[3]+"分");
+					}
+				}else if(score[1]==score[2]){
+					if(score[1]<score[3]){
+						System.out.println("玩家3赢，最高结果为："+score[3]+"分");
+					}else{
+						System.out.println("玩家1、2持平，最高结果为："+score[1]+"分");
+					}
+				}else if(score[1]==score[3]){
+					if(score[1]<score[2]){
+						System.out.println("玩家2赢，最高结果为："+score[2]+"分");
+					}else{
+						System.out.println("玩家1、3持平，最高结果为："+score[3]+"分");
+					}
+				}else if(score[2]==score[3]){
+					if(score[2]<score[1]){
+						System.out.println("玩家1赢，最高结果为："+score[1]+"分");
+					}else{
+						System.out.println("玩家2、3持平，最高结果为："+score[3]+"分");
+					}
+				}
+			}
+	}
+	
+}
+
+
+/**
+* @author 蔡婷
+* @date 2018年9月23日
+* @Title: GuessLauncher.java
+* @project_name: SchoolWork
+* @Package Ytz
+* @Description: TODO(用一句话描述该文件做什么)
+* @version V1.0
+*/
+
+
+package Ytz;
+
+import java.util.Scanner;
+
+/**
+* @ClassName: GuessLauncher
+* @Description: TODO(这里用一句话描述这个类的作用)
+* @author 蔡婷
+* @date 2018年9月23日
+*
+*/
+
+public class GuessLauncher {
+
+	public static void main(String[] args) {
+		System.out.println("欢迎三位玩家开始猜数字游戏！");
+		Scanner scanner=new Scanner(System.in);
+		GuessGame game1=new GuessGame();
+		game1.startGame();
+		System.out.print("请问是否继续：'y'or'n':");
+		String answer=scanner.next();
+		if(answer.equals("y")){
+			game1.startGame();
+		}else{
+			System.out.println("亲，游戏结束！欢迎再来");
+		}
+    }
+
+}
+
+
+
+
