@@ -15,9 +15,14 @@
     <name>小莉莉</name>  
     <wage>5100.0</wage> 
   </shareHolder>  
-  <employee idWork="055">
-    <name>张三</name>
-    <birthMonth>10</birthMonth>
-    <wage>4923.139</wage>
-  </employee>
+  <manager idWork="014"> 
+    <name>李四</name>  
+    <birthMonth>7</birthMonth>  
+    <wage>6363.7373</wage> 
+  </manager>  
+  <manager idWork="016"> 
+    <name>王五</name>  
+    <birthMonth>8</birthMonth>  
+    <wage>6379.088</wage> 
+  </manager> 
 </member>

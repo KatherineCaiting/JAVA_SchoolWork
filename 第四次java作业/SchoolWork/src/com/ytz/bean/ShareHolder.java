@@ -53,7 +53,7 @@ public class ShareHolder extends Member{
 		setName(scanner.next());
 		
 		//股东的工资设定
-		setBouns((float) (1000*0.1));//年终分红
+		setBouns((float) (Math.random()*100000*0.1));//年终分红
 		setWage(5000+this.getBouns());//基本工资+奖金
 	}
 
