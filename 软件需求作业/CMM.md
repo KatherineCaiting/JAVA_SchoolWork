@@ -1,14 +1,14 @@
-## 软件需求分析作业
-
 ### 问题1：CMM模型的最新标准是什么，有哪些体系，国内有哪些企业符合CMM标准，并且属于哪一级别？
 
-###### *答：*CMM模型的最新标准是*CMMI*(CMMI1.3)。
+------
+
+###### 答：*CMM模型的最新标准是*CMMI*(CMMI1.3)。
 
 ###### CMMI主要包含了[系统工程](https://zh.wikipedia.org/wiki/%E7%B3%BB%E7%B5%B1%E5%B7%A5%E7%A8%8B)（Systems Engineering, SE）、[软件工程](https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94%E5%B7%A5%E7%A8%8B)（Software Engineering, SW）、整合产品与流程发展（Integrated Product and Process Development, IPPD），以及委外作业（Supplier Sourcing, SS）四个专业体系。
 
 [国内符合CMM标准的企业](http://www.cmmirz.com/)（查找China即可找到其名称和级别）
 
-[^等级划分]:  
+[^等级划分]: 
 
 **1． 初始级**
 
